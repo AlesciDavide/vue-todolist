@@ -16,8 +16,9 @@
                             <div @click="toggClassDone(index)" :class="(item.done === true) ? 'done' : ''">
                                 {{item.text}}
                             </div>
-                            <div @click="removeItemTodo(index)">
-                                X
+                            <div >
+                                <span @click="changeNameTask(index)">Modifica</span>
+                                <span @click="removeItemTodo(index)">X</span>
                             </div>
                     </li>
                 </ul>

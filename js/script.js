@@ -48,6 +48,9 @@ createApp({
         toggClassDone: function(index){
             this.todoList[index].done = !this.todoList[index].done
         },
-        
+        /* funzione per cambiare l'argomento di una task */
+        changeNameTask: function(index){
+            this.todoList[index].text = prompt('apporta una modifica alla task');
+        }
     }
 }).mount('#app')
