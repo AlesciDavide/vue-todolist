@@ -13,7 +13,7 @@
             <section class="todoListContainer">
                 <ul class="ulLista">
                         <li class="itemList" v-for="(item, index) in todoList" key="index">
-                            <div :class="(item.done === true) ? 'done' : ''">
+                            <div @click="toggClassDone(index)" :class="(item.done === true) ? 'done' : ''">
                                 {{item.text}}
                             </div>
                             <div @click="removeItemTodo(index)">
@@ -21,8 +21,12 @@
                             </div>
                     </li>
                 </ul>
+                <div class="inputTodoList">
+                    <label for="newTodoListItem">Inserisci una nuova task:</label>
+                    <input id="newTodoListItem" type="text" v-model="newTask" @keyup.enter="addItemTodo(newTask)">
+                    <button @click="addItemTodo(newTask)">Aggiungi</button>
+                </div>
             </section>
-            
     
         </main>
     </div>
