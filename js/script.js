@@ -14,7 +14,7 @@ createApp({
                 },
                 {
                     text: 'Anadare a mangiare',
-                    done: true,
+                    done: false,
                 },
                 {
                     text: 'fare una capriola',
@@ -22,6 +22,7 @@ createApp({
                 },
             ],
             newTask: '',
+            showMod: false,
         }
     },
     methods:{
@@ -49,8 +50,11 @@ createApp({
             this.todoList[index].done = !this.todoList[index].done
         },
         /* funzione per cambiare l'argomento di una task */
-        changeNameTask: function(index){
-            this.todoList[index].text = prompt('apporta una modifica alla task');
+        changeNameTask: function(){
+            this.showMod = true;
+        },
+        apllyModTask: function(){
+            this.showMod = false;
         }
     }
 }).mount('#app')
