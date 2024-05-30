@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>vue-todolist</title>
 </head>
 <body>
+    <div id="app">
+        <main>
+            <section class="todoListContainer">
+                <h1>todo list</h1>
+                <ul>
+                    <li class="itemList" v-for="(item, index) in todoList" key="index">
+                        <span>
+                            {{item.text}}
+                        </span>
+                    </li>
+                </ul>
+            </section>
     
+        </main>
+    </div>
+
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
