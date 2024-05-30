@@ -14,7 +14,7 @@ createApp({
                 },
                 {
                     text: 'Anadare a mangiare',
-                    done: false,
+                    done: true,
                 },
                 {
                     text: 'fare una capriola',
@@ -24,6 +24,9 @@ createApp({
         }
     },
     methods:{
-
+        /* funzione per rimuovere un item dalla lista */
+        removeItemTodo: function(index){
+            this.todoList.splice(index, 1);
+        }
     }
 }).mount('#app')

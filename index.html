@@ -9,16 +9,20 @@
 <body>
     <div id="app">
         <main>
+            <h1>todo list</h1>
             <section class="todoListContainer">
-                <h1>todo list</h1>
-                <ul>
-                    <li class="itemList" v-for="(item, index) in todoList" key="index">
-                        <span>
-                            {{item.text}}
-                        </span>
+                <ul class="ulLista">
+                        <li class="itemList" v-for="(item, index) in todoList" key="index">
+                            <div :class="(item.done === true) ? 'done' : ''">
+                                {{item.text}}
+                            </div>
+                            <div @click="removeItemTodo(index)">
+                                X
+                            </div>
                     </li>
                 </ul>
             </section>
+            
     
         </main>
     </div>
